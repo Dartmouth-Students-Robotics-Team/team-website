@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Arimo", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 
   --color-dartmouth-green: #00693E;
   --color-dartmouth-ink: #eaf2ed;
