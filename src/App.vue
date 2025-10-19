@@ -57,16 +57,16 @@ import { robots, results, subteams } from './data'
     <div class="grid grid-cols-12 gap-4">
       <article class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border border-[color-mix(in_srgb,var(--accent)_14%,transparent)] rounded-xl2 p-4 shadow-soft" style="--i:0">
         <h3 class="text-[18px] font-semibold mb-1">Open Roles</h3>
-        <p class="text-[#a7b0aa]">Add a blurb and link to application or mailing list. Mechanical, embedded, controls, perception, ops, outreach.</p>
-        <p class="pt-2"><a class="inline-block px-3 py-2 rounded-xl font-bold text-[#04120c] bg-gradient-to-b from-[var(--accent)] to-[#59c999]" href="#">Apply / Interest Form</a></p>
+        <p class="text-[#a7b0aa]">Mechanical, embedded, controls, perception, ops, outreach.</p>
+        <p class="pt-2"><a class="inline-block px-3 py-2 rounded-xl font-bold text-[#04120c] bg-gradient-to-b from-[var(--accent)] to-[#59c999] mt-4" href="#">Apply / Interest Form</a></p>
       </article>
       <article class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border border-[color-mix(in_srgb,var(--accent)_14%,transparent)] rounded-xl2 p-4 shadow-soft" style="--i:1">
         <h3 class="text-[18px] font-semibold mb-1">Meeting Times</h3>
-        <p class="text-[#a7b0aa]">List weekly build nights, standups, and lab locations. Include onboarding notes.</p>
+        <p class="text-[#a7b0aa]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, dolor assumenda debitis consequatur quo aliquam facilis</p>
       </article>
       <article class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--accent)_14%,transparent)] border rounded-xl2 p-4 shadow-soft" style="--i:2">
         <h3 class="text-[18px] font-semibold mb-1">Contact</h3>
-        <p class="text-[#a7b0aa]">Email, Discord, and socials. Add a note on how to sponsor or collaborate.</p>
+        <p class="text-[#a7b0aa]">Email, Discord, and socials.</p>
       </article>
     </div>
   </SectionShell>

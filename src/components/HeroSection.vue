@@ -6,9 +6,9 @@ const nextCycle = 'Fall Build — Oct 28'
   <header id="top" class="mx-auto w-[min(1200px,92%)] pt-20 pb-14 relative overflow-hidden">
     <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-10 items-center">
       <div class="reveal space-y-4">
-        <span class="inline-flex items-center gap-2 rounded-full px-3 py-2 bg-[#0d1713] border border-[color-mix(in_srgb,var(--accent)_20%,transparent)] text-sm">⚙️ Building, learning, competing</span>
-        <h2 class="font-black leading-[1.02] tracking-tight text-[clamp(28px,4vw,56px)]">Robots, research, and a community that ships.</h2>
-        <p class="opacity-90 max-w-[56ch]">We’re the Dartmouth Student Robotics Team — an interdisciplinary group designing autonomous and tele‑operated systems for collegiate competitions and campus projects. This site is a content placeholder with scroll‑linked animations using <code>view()</code>.</p>
+        <!--<span class="inline-flex items-center gap-2 rounded-full px-3 py-2 bg-[#0d1713] border border-[color-mix(in_srgb,var(--accent)_20%,transparent)] text-sm">⚙️ Building, learning, competing</span>-->
+        <h2 class="font-black leading-[1.02] tracking-tight text-[clamp(28px,4vw,56px)]">Robots, research, and community</h2>
+        <p class="opacity-90 max-w-[56ch]">We’re the Dartmouth Student Robotics Team — Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aliquam sit magni dolorum maiores nihil. Saepe recusandae fugit ducimus accusantium inventore vel, molestiae culpa illo id, rerum aliquid, itaque optio?</p>
         <div class="flex gap-2 flex-wrap pt-1">
           <span class="border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] px-2.5 py-2 rounded-xl text-xs opacity-95">Autonomy</span>
           <span class="border border-[color-mix(in_srgb,var(--accent)_30%,transparent)] px-2.5 py-2 rounded-xl text-xs opacity-95">Controls</span>
