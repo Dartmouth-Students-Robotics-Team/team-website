@@ -25,20 +25,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
+      - name: Enable pnpm via Corepack
+        run: |
+          corepack enable
+          corepack prepare pnpm@9 --activate
+          pnpm --version
 
-      - name: Install deps
+      - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
       - name: Build
         run: pnpm build
 
-      - name: Upload artifact
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
