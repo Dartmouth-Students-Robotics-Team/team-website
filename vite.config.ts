@@ -6,15 +6,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwind from '@tailwindcss/postcss'
 
 export default defineConfig({
+  base: '/team-website/',
   plugins: [vue(), vueJsx(), vueDevTools()],
-  css: {
-    postcss: {
-      plugins: [tailwind()],
-    },
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
+  css: { postcss: { plugins: [tailwind()] } },
+  resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
 })
