@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dartmouth-green: #00693E;
+  --color-dartmouth-ink: #eaf2ed;
+  --color-dartmouth-panel: #0f1412;
+  --color-dartmouth-bg: #0b0f0d;
+  --color-dartmouth-accent: #6CE0A9;
+
+  --radius-xl2: 18px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,.25);
+}
+
+:root{ --accent: var(--color-dartmouth-accent); }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Subtle page gradient */
+body{
+  background: linear-gradient(180deg, var(--color-dartmouth-bg), #0b1110 35%, #0c1312 100%);
+}
+
+/* Scroll-linked animations using CSS view() timelines */
+section{ view-timeline-name: --section; view-timeline-axis: block; }
+.reveal{ opacity: 0; transform: translateY(24px);
+  animation: fadeUp both ease-out;
+  animation-timeline: view(--section);
+  animation-range: entry 5% cover 35%;
+}
+@keyframes fadeUp{ from{opacity:0; transform: translateY(24px)} to{opacity:1; transform: translateY(0)} }
+
+.card{ --i: 0; animation: fadeUp both ease-out; animation-timeline: view(--section); animation-range: entry 10% cover 40%; animation-delay: calc(var(--i) * 40ms); }
+.hero-art{ animation: heroFloat both linear; animation-timeline: view(); animation-range: entry 0% exit 60% }
+@keyframes heroFloat{ from{ transform: translateY(0)} to{ transform: translateY(-40px)} }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal, .card, .hero-art{ animation: none !important; opacity: 1; transform: none }
+}
