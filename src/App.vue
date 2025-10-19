@@ -14,19 +14,33 @@ import { robots, results, subteams } from './data'
   <SectionShell id="robots">
     <template #kicker>Current &amp; Past</template>
     <template #title>Robots &amp; Projects</template>
-    <CardsGrid :items="robots" :title="r=> r.name" :meta="r=> `${r.year} • ${r.track}`" :body="r=> r.summary" />
+    <CardsGrid
+  :items="robots"
+  :title="r => r.name"
+  :meta="r => `${r.year} • ${r.track}`"
+  :body="r => r.summary"
+/>
   </SectionShell>
 
   <SectionShell id="results">
     <template #kicker>Competitions</template>
     <template #title>Results &amp; Highlights</template>
-    <CardsGrid :items="results" :title="r=> r.event" :meta="r=> `${r.date} • ${r.location}`" :body="r=> `${r.placement} — ${r.note}`" />
+    <CardsGrid
+  :items="results"
+  :title="r => r.event"
+  :meta="r => `${r.date} • ${r.location}`"
+  :body="r => `${r.placement} — ${r.note}`"
+/>
   </SectionShell>
 
   <SectionShell id="team">
     <template #kicker>People</template>
     <template #title>Leadership &amp; Subteams</template>
-    <CardsGrid :items="subteams" :title="t=> t.name" :body="t=> t.description" />
+    <CardsGrid
+      :items="subteams"
+      :title="t => t.name"
+      :body="t => t.description"
+    />
   </SectionShell>
 
   <SectionShell id="sponsors">

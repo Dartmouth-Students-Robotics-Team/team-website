@@ -1,15 +1,15 @@
 <script setup lang="ts">
-interface Cardish { [k:string]: unknown }
+type AnyRec = Record<string, any>
 const props = defineProps<{
-  items: Cardish[],
-  title: (x: Cardish) => string,
-  meta?: (x: Cardish) => string | undefined,
-  body?: (x: Cardish) => string | undefined,
-  keyFn?: (x: Cardish, i:number) => string | number
+  items: AnyRec[]
+  title: (x: AnyRec) => string
+  meta?: (x: AnyRec) => string | undefined
+  body?: (x: AnyRec) => string | undefined
+  keyFn?: (x: AnyRec, i: number) => string | number
 }>()
-const keyFn = props.keyFn ?? ((_,i)=> i)
-const meta = props.meta ?? (()=> '')
-const body = props.body ?? (()=> '')
+const keyFn = props.keyFn ?? ((_, i) => i)
+const meta  = props.meta  ?? (() => '')
+const body  = props.body  ?? (() => '')
 </script>
 
 <template>
