@@ -5,22 +5,33 @@ import SectionShell from './components/SectionShell.vue'
 import CardsGrid from './components/CardsGrid.vue'
 import FooterBar from './components/FooterBar.vue'
 import { robots, results, subteams } from './data'
+import Carousel from './components/Carousel.vue'
+import img from '/carousel/picture1.jpg'
+
+const x = 5 // set X to the number of pictures you have
+const files = Array.from({ length: x }, (_, i) => `picture${i + 1}.jpg`)
+const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
 </script>
 
 <template>
   <NavBar />
   <HeroSection />
 
-  <SectionShell id="robots">
-    <template #kicker>Current &amp; Past</template>
-    <template #title>Robots &amp; Projects</template>
-    <CardsGrid
-  :items="robots"
-  :title="r => r.name"
-  :meta="r => `${r.year} • ${r.track}`"
-  :body="r => r.summary"
-/>
-  </SectionShell>
+  <div class="flex flex-col mt-12 mb-64">
+    <div class="absolute background-gradient"></div>
+    <h1 class="w-full text-4xl font-bold text-center relative -top-32">24-25 Robot</h1>
+    <Carousel
+    :images="images"
+    :alts="['Alpha','Beta','Gamma','Delta','Epsilon']"
+    :width="480"
+    :height="340"
+    :radius="420"
+    :perspective="1600"
+    :autoplay="true"
+    :intervalMs="2400"
+    class="relative -bottom-24"
+  />
+  </div>
 
   <SectionShell id="results">
     <template #kicker>Competitions</template>
@@ -73,3 +84,9 @@ import { robots, results, subteams } from './data'
 
   <FooterBar />
 </template>
+
+<style scoped>
+.background-gradient {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+}
+</style>

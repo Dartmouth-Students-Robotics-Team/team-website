@@ -1,5 +1,5 @@
-export interface Robot {
-  id: number; name: string; year: string; track: string; summary: string;
+export interface CarouselPicture {
+  image: string;
 }
 export interface Result {
   id: number; event: string; date: string; location: string; placement: string; note: string;
@@ -9,9 +9,11 @@ export interface Subteam {
 }
 
 export const robots = [
-{id:1, name:'Aegis', year:'2025', track:'Autonomous Ground', summary:'Obstacle avoidance, visual servoing, and SLAM on an NVIDIA Jetson.'},
-{id:2, name:'Triton', year:'2024', track:'RoboSub', summary:'Perception pipeline with color segmentation and AprilTags; custom thruster control.'},
-{id:3, name:'Kestrel', year:'2023', track:'Aerial', summary:'PX4 stack, waypoint following, and gimbal stabilization for mapping runs.'},
+  {image:'/carousel/picture1.jpg'},
+  {image:'/carousel/picture2.jpg'},
+  {image:'/carousel/picture3.jpg'},
+  {image:'/carousel/picture4.jpg'},
+  {image:'/carousel/picture5.jpg'},
 ]
 
 export const results = [
