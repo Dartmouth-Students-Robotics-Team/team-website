@@ -176,7 +176,7 @@ onBeforeUnmount(stopLoop)
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
   background: #0b1210;
-  border: 1px solid color-mix(in oklab, var(--accent, #48cfae) 18%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-accent, #48cfae) 18%, transparent);
 }
 
 .panel img {

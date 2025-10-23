@@ -7,25 +7,39 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
 
-  --color-dartmouth-green: #00693E;
-  --color-dartmouth-ink: #eaf2ed;
-  --color-dartmouth-panel: #0f1412;
-  --color-dartmouth-bg: #0b0f0d;
-  --color-dartmouth-accent: #6CE0A9;
+  /* Base colors */
+  --color-bg: #0b0f0d;
+  --color-surface: #0f1412;
+  --color-panel: #0c1312;
+  --color-ink: #eaf2ed;
+  --color-muted: #a7b0aa;
+  --color-muted-strong: #bcd3c9;
+
+  /* Accent palette */
+  --color-accent: #6CE0A9;
+  --color-accent-dark: #59c999;
+  --color-accent-border: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  --color-accent-border-strong: color-mix(in srgb, var(--color-accent) 35%, transparent);
+
+  /* Support */
+  --color-border-subtle: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --color-border: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  --color-panel-light: color-mix(in oklab, var(--color-panel) 60%, white);
 
   --radius-xl2: 18px;
   --shadow-soft: 0 10px 30px rgba(0,0,0,.25);
 }
 
-:root{ --accent: var(--color-dartmouth-accent); }
 
 html {
-    scroll-behavior: smooth;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
 }
 
 /* Subtle page gradient */
 body{
-  background: linear-gradient(180deg, var(--color-dartmouth-bg), #0b1110 35%, #0c1312 100%);
+  background: linear-gradient(180deg, var(--color-bg), #0b1110 35%, #0c1312 100%);
 }
 
 /* Scroll-linked animations using CSS view() timelines */

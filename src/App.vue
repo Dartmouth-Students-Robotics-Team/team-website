@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
-import HeroSection from './components/HeroSection.vue'
-import SectionShell from './components/SectionShell.vue'
-import CardsGrid from './components/CardsGrid.vue'
-import FooterBar from './components/FooterBar.vue'
+import NavBar from './components/layout/NavBar.vue'
+import Hero from './components/ui/Hero.vue'
+import Section from './components/ui/Section.vue'
+import CardGrid from './components/ui/CardGrid.vue'
+import Carousel from './components/ui/Carousel.vue'
+import Footer from './components/layout/Footer.vue'
+import Path from './components/ui/Path.vue'
+
 import { robots, results, subteams } from './data'
-import Carousel from './components/Carousel.vue'
-import img from '/carousel/picture1.jpg'
 
 const x = 5 // set X to the number of pictures you have
 const files = Array.from({ length: x }, (_, i) => `picture${i + 1}.jpg`)
@@ -15,78 +16,69 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
 
 <template>
   <NavBar />
-  <HeroSection />
+  <Hero />
 
-  <div class="flex flex-col mt-12 mb-64">
-    <div class="absolute background-gradient"></div>
-    <h1 class="w-full text-4xl font-bold text-center relative -top-32">24-25 Robot</h1>
-    <Carousel
-    :images="images"
-    :alts="['Alpha','Beta','Gamma','Delta','Epsilon']"
-    :width="480"
-    :height="340"
-    :radius="420"
-    :perspective="1600"
-    :autoplay="true"
-    :intervalMs="2400"
-    class="relative -bottom-24"
-  />
+  <div class="relative mx-auto w-full -mt-20">
+    <Path class="absolute left-1/2 -translate-x-1/2" v-for="i in [1,2,3,4]"
+      :width="1500"
+      color="var(--color-accent)"
+      height="340"
+      :speed="40 + i*10"
+      cycles="2"
+      :amplitude="20 + (i * 20 %40) * (i %2 ===0 ? 1 : -1)"
+      :phaseDeg="i * 90"
+    />
   </div>
 
-  <SectionShell id="results">
+  <div class="container mx-auto mt-40 relative mb-32">
+    <!--<h2 class="text-center text-4xl font-bold -mb-48 text-ink">24–25 Robot</h2>-->
+    <Carousel :images="images" class="mx-auto" />
+  </div>
+
+  <Section id="results">
     <template #kicker>Competitions</template>
     <template #title>Results &amp; Highlights</template>
-    <CardsGrid
-  :items="results"
-  :title="r => r.event"
-  :meta="r => `${r.date} • ${r.location}`"
-  :body="r => `${r.placement} — ${r.note}`"
-/>
-  </SectionShell>
+    <CardGrid
+      :items="results"
+      :title="r => r.event"
+      :meta="r => `${r.date} • ${r.location}`"
+      :body="r => `${r.placement} — ${r.note}`"
+    />
+  </Section>
 
-  <SectionShell id="team">
+  <Section id="team">
     <template #kicker>People</template>
     <template #title>Leadership &amp; Subteams</template>
-    <CardsGrid
+    <CardGrid
       :items="subteams"
       :title="t => t.name"
       :body="t => t.description"
     />
-  </SectionShell>
+  </Section>
 
-  <SectionShell id="sponsors">
+  <Section id="sponsors">
     <template #kicker>Partners</template>
     <template #title>Sponsors &amp; Support</template>
-    <div class="grid grid-cols-6 gap-2 reveal md:gap-3 max-md:grid-cols-3">
-      <div v-for="i in 6" :key="i" class="opacity-70 p-3 rounded-lg border border-dashed border-[color-mix(in_srgb,var(--accent)_18%,transparent)] text-center">Logo</div>
+    <div class="grid grid-cols-6 gap-3 md:gap-4 max-md:grid-cols-3">
+      <div v-for="i in 6" :key="i" class="p-3 rounded-lg border border-dashed border-[color-mix(in_srgb,var(--color-accent)_18%,transparent)] text-center opacity-70">
+        <img src="/polymaker-full-logo.svg" alt="">
+      </div>
     </div>
-  </SectionShell>
+  </Section>
 
-  <SectionShell id="join">
+  <Section id="join">
     <template #kicker>Get Involved</template>
     <template #title>Join the Team</template>
-    <div class="grid grid-cols-12 gap-4">
-      <article class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border border-[color-mix(in_srgb,var(--accent)_14%,transparent)] rounded-xl2 p-4 shadow-soft" style="--i:0">
-        <h3 class="text-[18px] font-semibold mb-1">Open Roles</h3>
-        <p class="text-[#a7b0aa]">Mechanical, embedded, controls, perception, ops, outreach.</p>
-        <p class="pt-2"><a class="inline-block px-3 py-2 rounded-xl font-bold text-[#04120c] bg-gradient-to-b from-[var(--accent)] to-[#59c999] mt-4" href="#">Apply / Interest Form</a></p>
-      </article>
-      <article class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border border-[color-mix(in_srgb,var(--accent)_14%,transparent)] rounded-xl2 p-4 shadow-soft" style="--i:1">
-        <h3 class="text-[18px] font-semibold mb-1">Meeting Times</h3>
-        <p class="text-[#a7b0aa]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, dolor assumenda debitis consequatur quo aliquam facilis</p>
-      </article>
-      <article class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--accent)_14%,transparent)] border rounded-xl2 p-4 shadow-soft" style="--i:2">
-        <h3 class="text-[18px] font-semibold mb-1">Contact</h3>
-        <p class="text-[#a7b0aa]">Email, Discord, and socials.</p>
-      </article>
-    </div>
-  </SectionShell>
+    <CardGrid
+      :items="[
+        { title: 'Open Roles', body: 'Mechanical, embedded, controls, perception, ops, outreach.', link: '#' },
+        { title: 'Meeting Times', body: 'Weekly Thursday 7PM @ MacLean M204.' },
+        { title: 'Contact', body: 'Email, Discord, and socials.' },
+      ]"
+      :title="i => i.title"
+      :body="i => i.body"
+    />
+  </Section>
 
-  <FooterBar />
+  <Footer />
 </template>
-
-<style scoped>
-.background-gradient {
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
-}
-</style>
