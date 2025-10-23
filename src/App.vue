@@ -18,7 +18,7 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
   <NavBar />
   <Hero />
 
-  <div class="relative mx-auto w-full -mt-20">
+  <div class="relative mx-auto w-full -mt-20" id="robots">
     <Path class="absolute left-1/2 -translate-x-1/2" v-for="i in [1,2,3,4]"
       :width="1500"
       color="var(--color-accent)"
