@@ -30,7 +30,7 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
     />
   </div>
 
-  <div class="container mx-auto mt-40 relative mb-32">
+  <div class="container mx-auto mt-40 w-screen relative mb-32 overflow-visible">
     <!--<h2 class="text-center text-4xl font-bold -mb-48 text-ink">24–25 Robot</h2>-->
     <Carousel :images="images" class="mx-auto" />
   </div>
@@ -53,11 +53,18 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
     <template #title>Sponsors &amp; Support</template>
     <div class="flex flex-wrap gap-4">
       <div class="w-64 transition-all hover:-translate-y-1 hover:from-accent/15 p-4 flex justify-center align-middle rounded-xl bg-gradient-to-b border from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)]">
-        <img class="w-96" src="/polymaker-full-logo.svg" alt="">
+        <a class="w-96 h-full flex justify-center align-middle" href="https://polymaker.com/">
+          <img class="cursor-pointer w-96" src="/polymaker-full-logo.svg" alt="">
+        </a>
       </div>
-      <div class="w-64 transition-all hover:-translate-y-1 hover:from-accent/15 p-4 flex justify-center align-middle rounded-xl bg-gradient-to-b border from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)]">
-        <img class="w-96" src="/dartmouth-engineering-logo.png" alt="">
+      <div class="cursor-pointer w-64 transition-all hover:-translate-y-1 hover:from-accent/15 p-4 flex justify-center align-middle rounded-xl bg-gradient-to-b border from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)]">
+        <a class="w-96 h-full flex justify-center align-middle" href="https://engineering.dartmouth.edu/">
+          <img class="w-96" src="/dartmouth-engineering-logo.png" alt="">
+        </a>
       </div>
+      <!--<div class="cursor-pointer w-64 transition-all hover:-translate-y-1 hover:from-accent/15 p-4 flex justify-center align-middle rounded-xl bg-gradient-to-b border from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)]">
+        <img class="w-64 aspect-auto" src="/dartmouth-cs-logo.jpg" alt="">
+      </div>-->
     </div>
   </Section>
 

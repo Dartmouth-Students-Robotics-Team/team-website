@@ -151,7 +151,7 @@ onBeforeUnmount(stopLoop)
   width: 100%;
   height: 100%;
   perspective-origin: 50% 50%;
-  overflow-x: hidden;
+  overflow-x: visible;
   touch-action: pan-y; /* keep vertical scroll; horizontal goes to pointer events */
   cursor: grab;
 }
