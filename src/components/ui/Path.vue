@@ -54,6 +54,8 @@ function stopLoop() {
 
 onMounted(() => { raf = requestAnimationFrame(loop) })
 onBeforeUnmount(stopLoop)
+
+// THE REGION FOLLOWING THIS COMMENT IS NOT GOOD QUALITY, PLEASE REPLACE IT
 const screenSize = ref<{ width: number; height: number }>({
   width: typeof window !== 'undefined' ? window.innerWidth : props.width,
   height: typeof window !== 'undefined' ? window.innerHeight : props.height,
@@ -77,6 +79,7 @@ onBeforeUnmount(() => {
     window.removeEventListener('resize', updateScreenSize)
   }
 })
+// ENDS HERE
 const viewBox = computed(() => `0 0 ${screenSize.value.width} ${props.height}`)
 
 // Build sample points using real trig
