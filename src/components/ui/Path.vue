@@ -54,8 +54,30 @@ function stopLoop() {
 
 onMounted(() => { raf = requestAnimationFrame(loop) })
 onBeforeUnmount(stopLoop)
+const screenSize = ref<{ width: number; height: number }>({
+  width: typeof window !== 'undefined' ? window.innerWidth : props.width,
+  height: typeof window !== 'undefined' ? window.innerHeight : props.height,
+})
 
-const viewBox = computed(() => `0 0 ${props.width} ${props.height}`)
+function updateScreenSize() {
+  if (typeof window === 'undefined') return
+  screenSize.value.width = window.innerWidth
+  screenSize.value.height = window.innerHeight
+}
+
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    updateScreenSize()
+    window.addEventListener('resize', updateScreenSize)
+  }
+})
+
+onBeforeUnmount(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', updateScreenSize)
+  }
+})
+const viewBox = computed(() => `0 0 ${screenSize.value.width} ${props.height}`)
 
 // Build sample points using real trig
 const points = computed(() => {
