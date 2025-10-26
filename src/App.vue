@@ -35,6 +35,7 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
     <Carousel :images="images" class="mx-auto" />
   </div>
 
+  <!--
   <Section id="results">
     <template #kicker>Competitions</template>
     <template #title>Results &amp; Highlights</template>
@@ -44,6 +45,20 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
       :meta="r => `${r.date} • ${r.location}`"
       :body="r => `${r.placement} — ${r.note}`"
     />
+  </Section>
+  -->
+
+  <Section id="sponsors">
+    <template #kicker>Partners</template>
+    <template #title>Sponsors &amp; Support</template>
+    <div class="flex flex-wrap gap-4">
+      <div class="w-64 transition-all hover:-translate-y-1 hover:from-accent/15 p-4 flex justify-center align-middle rounded-xl bg-gradient-to-b border from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)]">
+        <img class="w-96" src="/polymaker-full-logo.svg" alt="">
+      </div>
+      <div class="w-64 transition-all hover:-translate-y-1 hover:from-accent/15 p-4 flex justify-center align-middle rounded-xl bg-gradient-to-b border from-[#0f1613] to-[#0c1411] border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)]">
+        <img class="w-96" src="/dartmouth-engineering-logo.png" alt="">
+      </div>
+    </div>
   </Section>
 
   <Section id="team">
@@ -56,24 +71,14 @@ const images = files.map(f => `${import.meta.env.BASE_URL}carousel/${f}`)
     />
   </Section>
 
-  <Section id="sponsors">
-    <template #kicker>Partners</template>
-    <template #title>Sponsors &amp; Support</template>
-    <div class="grid grid-cols-6 gap-3 md:gap-4 max-md:grid-cols-3">
-      <div v-for="i in 6" :key="i" class="p-3 rounded-lg border border-dashed border-[color-mix(in_srgb,var(--color-accent)_18%,transparent)] text-center opacity-70">
-        <img src="/polymaker-full-logo.svg" alt="">
-      </div>
-    </div>
-  </Section>
-
   <Section id="join">
     <template #kicker>Get Involved</template>
     <template #title>Join the Team</template>
     <CardGrid
       :items="[
-        { title: 'Open Roles', body: 'Mechanical, embedded, controls, perception, ops, outreach.', link: '#' },
-        { title: 'Meeting Times', body: 'Weekly Thursday 7PM @ MacLean M204.' },
-        { title: 'Contact', body: 'Email, Discord, and socials.' },
+        /*{ title: 'Open Roles', body: 'Mechanical, embedded, controls, perception, ops, outreach.', link: '#' },*/
+        { title: 'Meeting Times', body: 'Wednesdays & Sundays 8PM @ ESCS 116.' },
+        { title: 'Contact', body: 'Instagram @dartmouth_robotics' },
       ]"
       :title="i => i.title"
       :body="i => i.body"

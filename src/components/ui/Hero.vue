@@ -11,7 +11,7 @@ const tags = ['Autonomy', 'Controls', 'Perception', 'Mechanical', 'Electrical', 
           Robots, research, and community
         </h2>
         <p class="text-muted max-w-[56ch]">
-          We’re the Dartmouth Student Robotics Team — building innovative robots...
+          We’re the Dartmouth Student Robotics Team! A student-run organization dedicated to designing and building robots while fostering a collaborative community for learning and growth.
         </p>
         <div class="flex flex-wrap gap-2 pt-1 text-xs">
           <span

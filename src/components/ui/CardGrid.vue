@@ -20,7 +20,7 @@ const src   = props.src   ?? (() => '')
     <article
       v-for="(item, i) in items"
       :key="keyFn(item, i)"
-      class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] border border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)] rounded-xl2 p-4 shadow-soft transition-transform hover:-translate-y-1"
+      class="card col-span-12 sm:col-span-6 lg:col-span-4 bg-gradient-to-b from-[#0f1613] to-[#0c1411] hover:-translate-y-1 hover:from-accent/15 border border-[color-mix(in_srgb,var(--color-accent)_14%,transparent)] rounded-xl2 p-4 shadow-soft transition-all"
     >
       <img
         v-if="src(item)"

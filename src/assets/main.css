@@ -40,6 +40,8 @@ html {
 /* Subtle page gradient */
 body{
   background: linear-gradient(180deg, var(--color-bg), #0b1110 35%, #0c1312 100%);
+  overflow-x: hidden;
+  padding: 8px;
 }
 
 /* Scroll-linked animations using CSS view() timelines */

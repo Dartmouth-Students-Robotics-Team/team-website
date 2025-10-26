@@ -5,7 +5,7 @@
         <Logo style="width: 24px; height: 24px"/>
         <h1 class="text-lg font-bold tracking-wide">Dartmouth Robotics</h1>
       </a>
-      <ul class="flex gap-5 text-ink/85 text-sm">
+      <ul class="gap-5 text-ink/85 text-sm hidden md:flex">
         <li><a href="#robots" class="hover:text-accent transition-colors">Robots</a></li>
         <li><a href="#results" class="hover:text-accent transition-colors">Results</a></li>
         <li><a href="#team" class="hover:text-accent transition-colors">Team</a></li>
